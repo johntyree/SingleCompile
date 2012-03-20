@@ -1,9 +1,9 @@
 *SingleCompile.txt*
 
 File: SingleCompile.txt
-Version: 2.10.0beta
+Version: 2.10.1beta
 Original Author and Current Maintainer: H Xu <xuhdev@gmail.com>
-Last Change: 23 January 2011
+Last Change: 2 March 2011
 Description: Make it more convenient to compile or run a single source file.
 License:
     Copyright (C) 2010-2012 Hong Xu
@@ -528,7 +528,9 @@ your vimrc file:
 >
  let g:SingleCompile_showquickfixiferror = 1
 <
-The default value of g:SingleCompile_showquickfixiferror is 0.
+The default value of g:SingleCompile_showquickfixiferror is 0. Note that this
+option will be ignored if you are using interpreting languages on Windows,
+such as python, ruby.
 
                                             *SingleCompile-showresultafterrun*
 If "tee" command is available on your system, copy the following line to your
