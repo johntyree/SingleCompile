@@ -1,12 +1,14 @@
 *SingleCompile.txt*
 
 File: SingleCompile.txt
-Version: 2.10.1beta
-Original Author and Current Maintainer: H Xu <xuhdev@gmail.com>
-Last Change: 2 March 2011
+Version: 2.10.7
+Original Author and Current Maintainer: Hong Xu <hong@topbug.net>
+Last Change: 13 Feb 2013
+Homepage: http://www.topbug.net/SingleCompile
+GitHub repo: https://github.com/xuhdev/SingleCompile
 Description: Make it more convenient to compile or run a single source file.
 License:
-    Copyright (C) 2010-2012 Hong Xu
+    Copyright (C) 2010-2013 Hong Xu
 
     This file is part of SingleCompile.
 
@@ -44,6 +46,9 @@ OVERVIEW~
 This plugin is aimed at making it more convenient to compile or run a single
 source file without leaving vim.
 
+A short introduction is available here:
+http://www.topbug.net/blog/2012/03/07/use-singlecompile-to-compile-and-run-a-single-source-file-easily-in-vim/ 
+
 Consider this situation: you have just written a small c source file for a
 small test, but you have to write a Makefile to compile it or exit vim to
 compile it or compile it using "!gcc" without quickfix feature because vim's
@@ -75,185 +80,8 @@ Features:
    (see |:SCCompileRunAsync|).
 
 
-Here is a list of built-in supported compilers or interpreter(For some
-compilers/interpreters, you need to set the environment varibles correctly to
-make them available for SingleCompile):
-
-Ada:
-    gnat (GNAT)
-
-bash:
-    bash (Bourne-Again Shell)
-
-C:
-    bcc (Borland C++ Builder), Windows only
-    cc (UNIX C Compiler), UNIX only
-    ch (SoftIntegration Ch)
-    clang (the Clang C and Objective-C compiler)
-    gcc (GNU C Compiler)
-    icc (Intel C++ Compiler)
-    lcc (Little C Compiler)
-    msvc (Microsoft Visual C++ (In PATH)), Windows only
-    msvc80 (Microsoft Visual C++ 2005), Windows only
-    msvc90 (Microsoft Visual C++ 2008), Windows only
-    msvc100 (Microsoft Visual C++ 2010), Windows only
-    open-watcom (Open Watcom C/C++32 Compiler)
-    open64 (Open64 C Compiler), UNIX only
-    pcc (Portable C Compiler)
-    sol-studio (Sun C Compiler(Sun Solaris Studio)), UNIX only
-    tcc (Tiny C Compiler)
-    tcc-run (Tiny C Compiler with "-run" Flag)
-
-C++:
-    bcc (Borland C++ Builder), Windows Only
-    ch (SoftIntegration Ch)
-    clang (the Clang C and Objective-C compiler)
-    g++ (GNU C++ Compiler)
-    icc (Intel C++ Compiler)
-    msvc (Microsoft Visual C++ (In PATH)), Windows only
-    msvc80 (Microsoft Visual C++ 2005), Windows only
-    msvc90 (Microsoft Visual C++ 2008), Windows only
-    msvc100 (Microsoft Visual C++ 2010), Windows only
-    open-watcom (Open Watcom C/C++32 Compiler)
-    open64 (Open64 C++ Compiler), UNIX only
-    sol-studio (Sun C++ Compiler(Sun Solaris Studio)), UNIX only
-
-C#:
-    msvcs(Microsoft Visual C#), Windows Only
-    mono (Mono C# compiler)
-
-cmake:
-    cmake (cmake)
-
-csh:
-    csh (C Shell)
-    tcsh (TENEX C Shell)
-
-D:
-    dmd (DMD Compiler)
-
-dos batch:
-    dosbatch (DOS Batch)
-
-erlang:
-    escript (Erlang Scripting Support)
-
-Fortran:
-    ftn95 (Silverfrost FTN95), Windows only
-    g77 (GNU Fortran 77 Compiler)
-    g95 (G95)
-    gfortran (GNU Fortran Compiler)
-    ifort (Intel Fortran Compiler)
-    open-watcom (Open Watcom Fortran 77/32 Compiler)
-    open64-f90 (Open64 Fortran 90 Compiler), UNIX only
-    open64-f95 (Open64 Fortran 95 Compiler), UNIX only
-    sol-studio-f77 (Sun Fortran 77 Compiler(Sun Solaris Studio)), UNIX only
-    sol-studio-f90 (Sun Fortran 90 Compiler(Sun Solaris Studio)), UNIX only
-    sol-studio-f95 (Sun Fortran 95 Compiler(Sun Solaris Studio)), UNIX only
-
-Haskell:
-    ghc (Glasgow Haskell Compiler)
-    runhaskell (runhaskell)
-
-html:
-    arora (Arora)
-    chrome (Google Chrome)
-    epiphany (Epiphany)
-    firefox (Mozilla Firefox)
-    ie (Microsoft Internet Explorer)
-    konqueror (Konqueror)
-    opera (Opera)
-
-IDL(Interactive Data Language):
-    idl (ITT Visual Information Solutions Interactive Data Language)
-    gdl (GNU Data Language incremental compiler)
-
-Java:
-    gcj (GNU Java Compiler)
-    sunjdk (Sun Java Development Kit)
-
-JavaScript:
-    gjs (Javascript Bindings for GNOME)
-    js (SpiderMonkey, a JavaScript engine written in C)
-    node.js (node.js)
-    rhino (Rhino, a JavaScript engine written in Java)
-
-ksh:
-    ksh (Korn Shell)
-
-LaTeX:
-    latex (LaTeX)
-    pdflatex (pdfLaTeX)
-
-LISP:
-    clisp (GNU CLISP)
-    ecl (Embeddable Common-Lisp)
-    gcl (GNU Common Lisp)
-
-lua:
-    lua (Lua Interpreter)
-
-Makefile:
-    gmake (GNU Make)
-    nmake (Microsoft Program Maintenance Utility)
-    mingw32-make (MinGW32 Make)
-
-Object-C:
-    clang (the Clang C and Objective-C compiler)
-    gcc (GNU Object-C Compiler)
-
-Pascal:
-    fpc (Free Pascal Compiler)
-    gpc (GNU Pascal Compiler)
-
-perl:
-    perl (Perl Interpreter)
-
-PHP:
-    php (PHP Command Line Interface 'CLI')
-
-python:
-    ironpython (IronPython)
-    jython (Jython)
-    pypy (PyPy)
-    python (Python Interpreter)
-    python3 (Python 3 Interpreter)
-
-R:
-    R (R)
-
-ruby:
-    ruby (Ruby Interpreter)
-
-sh:
-    ash (Almquist Shell)
-    bash (Bourne-Again Shell)
-    dash (Debian Almquist Shell)
-    ksh (Korn Shell)
-    sh (Bourne Shell)
-    zsh (Z Shell)
-
-tcl:
-    tclsh (Simple shell containing Tcl interpreter)
-
-tcsh:
-    tcsh (TENEX C Shell)
-
-vb script:
-    vb (VB Script Interpreter)
-
-xhtml:
-    arora (Arora)
-    chrome (Google Chrome)
-    chromium (Chromium)
-    epiphany (Epiphany)
-    firefox (Mozilla Firefox)
-    ie (Microsoft Internet Explorer)
-    konqueror (Konqueror)
-    opera (Opera)
-
-zsh:
-    zsh (Z Shell)
+The complete list of built-in compiler templates is at
+|SingleCompile-built-in-compiler|.
 
 You can add your compiler or interpreter support if the compiler or
 interpreter you want is not in the list. See details in the help file.
@@ -272,8 +100,8 @@ people, you could send me an email to inform me, and I'll put them in the
 built-in templates.
 
 
-Mercurial repository on bitbucket.org: https://bitbucket.org/xuhdev/singlecompile
 Git repository on github.com: https://github.com/xuhdev/SingleCompile
+Mercurial repository on bitbucket.org: https://bitbucket.org/xuhdev/singlecompile
 
 Follow xuhdev on twitter if you are interested in my development:
 http://twitter.com/xuhdev
@@ -426,10 +254,14 @@ Terminate the process which is running asynchronously if exists. Also see
 Command:
     :SCViewResult
 View the result of the last run command. Only valid when "tee" command is
-available.  "tee" is usually available on a UNIX system. If you are under
+available. "tee" is usually available on a UNIX system. If you are under
 Windows, install cygwin or visit the following link to download a "tee"
 command for Windows:
+
 http://gnuwin32.sourceforge.net/packages/coreutils.htm
+
+NOTE: When you disable "tee" by setting |SingleCompile_usetee| to 0, you
+will disable this feature. 
 
                                             *:SCViewResultAsync*
 Command:
@@ -511,6 +343,19 @@ following line to your vimrc:
 <
 The default value is 1.
 
+                                            *SingleCompile-quickfixwindowposition*
+If |g:SingleCompile_showquickfixiferror| is set to 1,
+|g:SingleCompile_quickfixwindowposition| defines the position where quickfix
+window shows up. The default value is "botright", but you can change this
+value by add the following line to your vimrc file:
+>
+ let g:SingleCompile_quickfixwindowposition = 'some_position'
+<
+Accepted values are "aboveleft", "topleft", "botright", "belowright",
+"vertical", "leftabove", etc. SingleCompile will simply prepend
+|g:SingleCompile_quickfixwindowposition| to 'cope' and 'cw' commands. See
+|opening-window| and 'cope' for more details.
+
                                             *SingleCompile-resultheight*
 g:SingleCompile_resultheight is the height of the result displaying window
 triggered by |:SCViewResult| command. To set the value, add the following line
@@ -528,9 +373,20 @@ your vimrc file:
 >
  let g:SingleCompile_showquickfixiferror = 1
 <
-The default value of g:SingleCompile_showquickfixiferror is 0. Note that this
-option will be ignored if you are using interpreting languages on Windows,
-such as python, ruby.
+The default value of g:SingleCompile_showquickfixiferror is 0. You may want to
+use this option with |SingleCompile-silentcompileifshowquickfix|. Note that
+this option will be ignored if you are using interpreting languages on
+Windows, such as python, ruby.
+
+                                          *SingleCompile-showquickfixifwarning*
+If |quickfix| is enabled and used, and you want the quickfix window to show
+automatically if there is a compilation warning.  This setting is only valid
+when g:SingleCompile_showquickfixiferror = 1.
+>
+ let g:SingleCompile_showquickfixifwarning = 0
+<
+The default value of g:SingleCompile_showquickfixifwarning is as same as
+g:SingleCompile_showquickfixiferror.  You don't want miss a warning, will you?
 
                                             *SingleCompile-showresultafterrun*
 If "tee" command is available on your system, copy the following line to your
@@ -543,6 +399,16 @@ This option is only valid for synchronous run. That is to say, asynchronous
 run is not affected by this option. The default value of
 g:SingleCompile_showresultafterrun is 0. Also see |:SCViewResult|.
 
+                                    *SingleCompile-silentcompileifshowquickfix*
+Avoid the additional hit of enter when using quickfix feature to compile.
+This is done by dismisses the output of the compilation (:silent make).  This
+feature is only valid when showquickfixiferror is enabled.  This feature won't
+enable on terminal because of the problem of screen refresh.
+>
+ let g:SingleCompile_silentcompileifshowquickfix = 1
+<
+This is not default enabled for compatible.
+
                                             *SingleCompile-usedialog*
 If you want SingleCompile to show message in a dialog, add the
 following line to your vimrc:
@@ -551,6 +417,15 @@ following line to your vimrc:
 <
 This setting will take no effect if your vim is not compiled with
 '+dialog_con' and '+dialog_gui'.
+
+                                          *SingleCompile-usetee*
+When set to 0, the use of tee is disabled when running your compiled program.
+This would make the flush of the display of the output of your program perform
+normally but you will lose the feature of |SCViewResult|.
+>
+ let g:SingleCompile_usetee = 0
+<
+The default value of g:SingleCompile_usetee is 1.
 
                                             *SingleCompile-usequickfix*
 If you don't want SingleCompile to use quickfix feature, add the following
@@ -628,6 +503,14 @@ first line. "out_file" is the output file of the compilation, such as
 SingleCompile to check whether compilation is needed. See
 |SingleCompile-alwayscompile| for more information.
 
+There are four special variable that you can use:
+'$(FILE_NAME)$' returns the "%".
+'$(FILE_PATH)$' returns "%:p".
+'$(FILE_TITLE)$' returns "%:r".
+'$(FILE_EXEC)$' returns "%:r.exe" on windows and "%:r" on unix.
+'$(FILE_RUN)$' returns "%:r.exe" on windows and "./%:r" on unix.
+Also see |%|.
+
 The first two lines are to set the template of your compiler, while the third
 line is to tell SingleCompile to use your compiler. If the second line is
 omitted, SingleCompile will detect the compilers available on your system
@@ -636,6 +519,7 @@ automatically, and use the first detected one.
 Here are some examples modified from built-in compiler templates:
 >
  " set the most common used run command
+ " you may also use $(FILE_RUN)$ as an alternative.
  if has('win32') || has('win64') || has('os2')
      let l:common_run_command = '$(FILE_TITLE)$'
      let l:common_out_file = '$(FILE_TITLE)$.exe'
@@ -808,6 +692,9 @@ Fortran:
     sol-studio-f90 (Sun Fortran 90 Compiler(Sun Solaris Studio)), UNIX only
     sol-studio-f95 (Sun Fortran 95 Compiler(Sun Solaris Studio)), UNIX only
 
+Go:
+    go (Go)
+
 Haskell:
     ghc (Glasgow Haskell Compiler)
     runhaskell (runhaskell)
@@ -842,6 +729,7 @@ ksh:
 LaTeX:
     latex (LaTeX)
     pdflatex (pdfLaTeX)
+    latexmk (Automatic LaTeX document generation routine)
 
 LISP:
     clisp (GNU CLISP)
@@ -855,6 +743,10 @@ Makefile:
     gmake (GNU Make)
     nmake (Microsoft Program Maintenance Utility)
     mingw32-make (MinGW32 Make)
+
+Markdown:
+    markdown (text-to-HTML conversion tool)
+    rdiscount (Discount Markdown Processor for Ruby)
 
 Object-C:
     clang (the Clang C and Objective-C compiler)
@@ -874,14 +766,23 @@ python:
     ironpython (IronPython)
     jython (Jython)
     pypy (PyPy)
-    python (Python Interpreter)
+    python (Python Interpreter, usually the system default Python, no matter it is Python 2 or 3.)
+    python2 (Python 2 Interpreter)
     python3 (Python 3 Interpreter)
 
 R:
     R (R)
 
+reStructuredText:
+    rst2html (reST to HTML)
+
 ruby:
     ruby (Ruby Interpreter)
+
+scala:
+    scala (Scala compiler)
+    Note: vim does not detect scala files out the box.
+    See https://github.com/bjartek/scala-vim-support
 
 sh:
     ash (Almquist Shell)
