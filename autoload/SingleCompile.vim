@@ -1569,6 +1569,12 @@ function! SingleCompile#ViewResult(async) " view the running result {{{1
     else
         let l:result_bufwinnr = bufwinnr(l:result_bufnr)
         exec l:result_bufwinnr.'wincmd w'
+        if bufname("%") != '__SINGLE_COMPILE_RUN_RESULT__'
+            " We are in the wrong buffer. Bail out.
+            echohl ErrorMsg | echo "SingleCompile buffer not found!" | echohl None
+            return
+        endif
+
         let l:save_cursor = getpos(".")
         setl modifiable
             exec "g/.*/d"
