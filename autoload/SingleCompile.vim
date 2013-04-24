@@ -1565,7 +1565,7 @@ function! SingleCompile#ViewResult(async) " view the running result {{{1
     if l:result_bufnr == -1
         exec 'rightbelow '.g:SingleCompile_resultheight.
                     \'split __SINGLE_COMPILE_RUN_RESULT__'
-        setl noswapfile buftype=nofile bufhidden=wipe foldcolumn=0 nobuflisted
+        setl winfixheight winfixwidth noswapfile buftype=nofile bufhidden=wipe nofoldenable foldcolumn=0 nobuflisted
     else
         let l:result_bufwinnr = bufwinnr(l:result_bufnr)
         exec l:result_bufwinnr.'wincmd w'
